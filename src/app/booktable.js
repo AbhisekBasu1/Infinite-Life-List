@@ -97,7 +97,7 @@ const BookTable = () => {
             A list of the key items recommended in the most popular longevity books, along with links to amazon lists to buy them.
             </p>
             <p className="text-sm sm:text-sm text-center mb-6 mt-8">
-            This list is <a className='underline' href='#'>100% open source</a> and has NO affiliate links ❤️
+            This list is <a className='underline' href='https://github.com/AbhisekBasu1/Infinite-Life-List'>100% open source</a> and has NO affiliate links ❤️
             </p>
             <a href='https://www.amazon.com/hz/wishlist/ls/2RG3OSJ31IE8L?ref_=wl_share'><p className="underline text-sm text-blue-200 sm:text-sm text-center mb-6 mt-8">
             Click here for a full list containing all the items
