@@ -139,7 +139,7 @@ const BookTable = () => {
             </table>
           </div>
           <p className="text-sm sm:text-base text-center text-gray-300 mt-2 mb-8">
-            Items marked with an empty jar icon (🫙) are either not available on Amazon or requires a prescription.
+            Items marked with an empty jar icon (🫙) are either not available on Amazon or require a prescription.
           </p>
         </div>
         <footer className="mt-12 bg-gray-800 text-center py-4">
