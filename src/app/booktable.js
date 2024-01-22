@@ -89,42 +89,46 @@ const BookTable = () => {
     // ... add other books here
   ];
     return (
+        <>
+      <div className="min-h-screen bg-gray-900 py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-xl sm:text-3xl font-semibold text-center mb-6 mt-8">
+          <h1 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-cyan-500">
             Infinite Life List 
-            </h1>
-          <p className="text-sm sm:text-sm text-center mb-6 mt-8">
+          </h1>
+          <p className="text-sm sm:text-base text-center text-gray-300 mb-8">
             A list of the key items recommended in the most popular longevity books, along with links to amazon lists to buy them.
-            </p>
-            <p className="text-sm sm:text-sm text-center mb-6 mt-8">
+          </p>
+          <p className="text-sm sm:text-base text-center text-gray-300 mb-8">
             This list is <a className='underline' href='https://github.com/AbhisekBasu1/Infinite-Life-List'>100% open source</a> and has NO affiliate links ❤️
+          </p>
+          <a href='https://www.amazon.com/hz/wishlist/ls/2RG3OSJ31IE8L?ref_=wl_share'>
+            <p className="underline text-sm sm:text-base text-cyan-400 text-center mb-12">
+              Click here for a full list containing all the items
             </p>
-            <a href='https://www.amazon.com/hz/wishlist/ls/2RG3OSJ31IE8L?ref_=wl_share'><p className="underline text-sm text-blue-200 sm:text-sm text-center mb-6 mt-8">
-            Click here for a full list containing all the items
-            </p></a>
-          <div className="overflow-x-auto">
-            <table className="min-w-full table-auto border-collapse border border-gray-200">
-              <thead className="bg-gray-100">
+          </a>
+          <div className="overflow-x-auto rounded-lg shadow-lg">
+            <table className="min-w-full bg-black bg-opacity-80 text-gray-300">
+              <thead className="text-sm sm:text-base bg-gray-800">
                 <tr>
-                  <th className="border border-gray-300 px-2 sm:px-4 py-2 text-left text-xs sm:text-sm font-medium text-gray-700">Title</th>
-                  <th className="border border-gray-300 px-2 sm:px-4 py-2 text-left text-xs sm:text-sm font-medium text-gray-700">Author(s)</th>
-                  <th className="border border-gray-300 px-2 sm:px-4 py-2 text-left text-xs sm:text-sm font-medium text-gray-700">Key Recommendations</th>
-                  <th className="border border-gray-300 px-2 sm:px-4 py-2 text-left text-xs sm:text-sm font-medium text-gray-700">Amazon List</th>
+                  <th className="px-4 py-3 text-left">Title</th>
+                  <th className="px-4 py-3 text-left">Author(s)</th>
+                  <th className="px-4 py-3 text-left">Key Recommendations</th>
+                  <th className="px-4 py-3 text-left">Amazon List</th>
                 </tr>
               </thead>
-              <tbody className="bg-white">
+              <tbody>
                 {books.map((book, index) => (
-                  <tr key={book.title} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                    <td className="border border-gray-300 px-2 sm:px-4 py-2 text-xs sm:text-sm text-gray-700">
-                      <a href={book.bookLink || "#"} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">
+                  <tr key={book.title} className={index % 2 === 0 ? 'bg-gray-700' : 'bg-gray-800'}>
+                    <td className="px-4 py-3">
+                      <a href={book.bookLink || "#"} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300">
                         {book.title}
                       </a>
                     </td>
-                    <td className="border border-gray-300 px-2 sm:px-4 py-2 text-xs sm:text-sm text-gray-700">{book.author}</td>
-                    <td className="border border-gray-300 px-2 sm:px-4 py-2 text-xs sm:text-sm text-gray-700">{book.recommendations}</td>
-                    <td className="border border-gray-300 px-2 sm:px-4 py-2 text-xs sm:text-sm text-gray-700">
+                    <td className="px-4 py-3">{book.author}</td>
+                    <td className="px-4 py-3">{book.recommendations}</td>
+                    <td className="px-4 py-3">
                       {book.amazonLink ? (
-                        <a href={book.amazonLink} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">List Link</a>
+                        <a href={book.amazonLink} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300">List Link</a>
                       ) : (
                         "Nothing to buy! ✊🏻" 
                       )}
@@ -134,7 +138,17 @@ const BookTable = () => {
               </tbody>
             </table>
           </div>
+          <p className="text-sm sm:text-base text-center text-gray-300 mt-2 mb-8">
+            Items marked with an empty jar icon (🫙) are either not available on Amazon or requires a prescription.
+          </p>
         </div>
+        <footer className="mt-12 bg-gray-800 text-center py-4">
+          <p className="text-gray-400 text-sm">
+            Made with <span className="text-red-500">❤️</span> by <a className='underline' href='https://www.brightmirror.co/'>Bright Mirror</a>
+          </p>
+        </footer>
+      </div>
+    </>
     )
 };
 
